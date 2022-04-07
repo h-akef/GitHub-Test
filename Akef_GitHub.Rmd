@@ -52,7 +52,13 @@ load_or_install_packages(required_packages)
 
 We first need to install Git if needed, Macs come with Git installed by default. You might need to install Command Line Tools to be able to use Git commands. 
 
-Next, we can configure git, but first editing the .gitconfig file
+
+## Configuring and Initializing Git
+
+Next, we can configure git, but first editing the .gitconfig file, then initializing a Git repository to an RStudio project. You can do this by either:
+
+  * checking the Git box when creating a project
+  * running the use_git() function below
 
 ```{r configuring git}
 
@@ -61,5 +67,17 @@ edit_git_config()
 use_git()
 
 ```
+
+You can now see that there's a Git Tab open near the Environment and History tabs. That's where you'll be able to see the history of any changes to your code.When you navigate to the Git tab, you can select History and that will open up a window showing the history of all your commits.
+
+## Let's get it to track changes!
+
+Git will not automatically track changes, so you have to tell it when you made changes so it can keep a record of them. This is what we call making a commit. Always include a meaningful commit message so it makes sense when you view it in the history. 
+
+**Any time you make additional changes you want to keep a record of:**
+
+* Go to the Git tab and click on "Commit"
+* This will open up a window where you can select the file you want to commit, and write a commit message. 
+* Once that's complete, you'll be able to view the changes in the history. 
 
 
