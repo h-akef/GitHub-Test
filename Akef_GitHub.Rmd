@@ -76,8 +76,11 @@ Git will not automatically track changes, so you have to tell it when you made c
 
 **Any time you make additional changes you want to keep a record of:**
 
+* To do this, you must have made any changes since your last commit. Otherwise, you won't see the files that you made changes to listed in the Git tab.
 * Go to the Git tab and click on "Commit"
 * This will open up a window where you can select the file you want to commit, and write a commit message. 
 * Once that's complete, you'll be able to view the changes in the history. 
+
+Now you can..
 
 
