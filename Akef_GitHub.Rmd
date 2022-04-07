@@ -1,0 +1,65 @@
+---
+title: "GitHub Demo"
+author: "Huda Akef"
+date: "4/7/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Brief Introduction to Git and GitHub
+
+## clean up!
+```{r clear-workspace}
+
+rm(list=ls())
+
+```
+
+# get all the packages in...
+
+```{r function-check-for-packages, include=FALSE}
+
+# make sure we can load packages 
+# (thanks to https://gist.github.com/smithdanielle/9913897)
+load_or_install_packages <- function(pkg){
+  new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+  if (length(new.pkg)) 
+    install.packages(new.pkg, 
+                     dependencies = TRUE,
+                     repos="http://cloud.r-project.org/")
+  sapply(pkg, require, character.only = TRUE)
+}
+
+```
+
+
+```{r load-packages, message=FALSE, results="hide"}
+# specify which packages we'll need
+required_packages = c("tidyverse",
+                      "stringr",
+                      "dplyr",
+                      "usethis"
+                      )
+
+# install them (if necessary) and load them
+load_or_install_packages(required_packages)
+```
+
+## Making sure Git works on your computer
+
+We first need to install Git if needed, Macs come with Git installed by default. You might need to install Command Line Tools to be able to use Git commands. 
+
+Next, we can configure git, but first editing the .gitconfig file
+
+```{r configuring git}
+
+edit_git_config()
+
+use_git()
+
+```
+
+
