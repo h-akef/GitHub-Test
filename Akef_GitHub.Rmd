@@ -66,12 +66,22 @@ Next, we can configure git, but first editing the .gitconfig file, then initiali
 
   * checking the Git box when creating a project
   * running the use_git() function below
+  
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+# IMPORTANT NOTE FOR ALL CODE CHUNKS!
+
+**Running the code within the chunks below will work and demonstrate how it works in this session, however, it may not stay in effect for your project in general. For retaining the use of Git, copy each line of code and run it in the console.**
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Alright, let's get started!
 
 ```{r configuring git, eval = FALSE}
 
 # this doesn't typically need to be in any saved code or RMarkdown files, you just need to run it once
 
-edit_git_config()
+edit_git_config() # see sext to add in file below
 
 # you can add this to the git_config file:  
 
@@ -79,10 +89,13 @@ use_git()
 
 ```
 
+*You can add this into your .gitconfig file*
+
 [user]
 	name = First Last
 	email = .........
 
+*end of text for .gitconfig file*
 
 You can now see that there's a Git Tab open near the Environment and History tabs. That's where you'll be able to see the history of any changes to your code.When you navigate to the Git tab, you can select History and that will open up a window showing the history of all your commits.
 
@@ -100,7 +113,7 @@ Git will not automatically track changes, so you have to tell it when you made c
 Exercise: type in anything in the space below, perhaps how you're feeling right now, or what plans you have for this weekend 
 
 
-
+>>>> write text here
 
 
 Once you're done writing, make sure you save the file. You'll see it show up in the Git tab, then you can click on Commit and see what happens!
@@ -121,12 +134,7 @@ Once you're done writing, make sure you save the file. You'll see it show up in 
 
 create_github_token()  # this will navigate to GitHub in your browser
 
-# you'll need to write a note to name the token and then generate the token, and copy the PAT - you won't see it again
-
-# paste your PAT in the placeholder below to save it in R
-# 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
-
-PAT_H <- "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"
+# you'll need to write a note to name the token and then generate the token, and copy the PAT - you won't see it again - you'll use it in the next function
 
 # this function is from the library (gitcreds), enter PAT as password in the console after running command
 
@@ -144,7 +152,7 @@ This is pretty straightforward, you first create the repository there. Then, whe
 
 Here's how to do it here -- it's also just one line of code that navigates to GitHub to where your new repo is.
 
-**Before running this, make sure you've committed all changes so they're copied into the repo**
+**Before running this, make sure you've committed any changes so they're copied into the repo**
 
 ```{r create GitHub repo, eval = FALSE}
 
@@ -154,6 +162,8 @@ use_github()
 
 
 ```
+
+This was just for fun :D
 ```{r emoji!}
 emo::ji("grinning")
 ```
@@ -162,21 +172,26 @@ emo::ji("grinning")
 
 *******
 
-Now that we've connect our RStudio project with a GitHub repo, we can *push* and *pull* our work between the two. 
+Now that we've connected our RStudio project with a GitHub repo, we can *push* and *pull* our work between the two. 
 
 * push = sending changes from RStudio to GitHub
 * pull = just the opposite, RStudio pulls most recent code from GitHub --- this is super important in collaborative work
 
 *Exercise*
+
 Let's quickly test how *pull* works:
 
 1. Go to the GitHub repo, open the .Rmd file, edit it by adding any text, then commit the changes.
-2. When you come back to RStudio, in the Git tab, click on down arrow -- the new text will show up on the file! 
+2. When you come back to RStudio, in the Git tab, click on the down arrow -- the new text will show up on the file! 
 
 Now let's *push* some changes from RStudio to GitHub:
 
-1. Write anything below, save the file, and commit the change.
+1. Write anything below, save the file, and commit the changes.
 2. Click on the up arrow, then go to the GitHub repo and check if you can see the new commit there.
 
 >>>> write text here
+
+*******
+
+That's it for now! This is just a glimpse into the possibilities of Git/GitHub and R. There's an open source book all about this here: https://happygitwithr.com/index.html
 
