@@ -41,7 +41,8 @@ load_or_install_packages <- function(pkg){
 required_packages = c("tidyverse",
                       "stringr",
                       "dplyr",
-                      "usethis"
+                      "usethis",
+                      "gitcreds"
                       )
 
 # install them (if necessary) and load them
@@ -96,9 +97,33 @@ Git will not automatically track changes, so you have to tell it when you made c
 
 1. The first thing you need to do is sign up for a GitHub account (free) if you don't already have one.
 2. Create a Personal Access Token (PAT) on GitHub, you'll need this along with your username.
+3. Store your PAT and connect to GitHub
 
-```{r create PAT}
+```{r create PAT & connect to GitHub}
 
+# you can also just do this in the console since it only needs to be done once
+
+create_github_token()  # this will navigate to GitHub in your browser
+
+# you'll need to write a note to name the token and then generate the token, and copy the PAT - you won't see it again
+
+# paste your PAT in the placeholder below to save it in R
+# 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
+
+PAT_H <- "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"
+
+# this function is from the library (gitcreds), enter PAT as password in the console after running command
+
+gitcreds_set()
 
 ```
 
+Now, that we've connected to GitHub, we'll connect our project to a GitHub repo -- note that each RStudio Project lives in a single GitHub repo. We can get this started here in RStudio or on GitHub. Here's how to do it here -- it's also just one line of code that navigates to GitHub to where your new repo is.
+
+**Before running this, make sure you've committed all changes so they're copied into the repo**
+
+```{r create GitHub repo}
+
+use_github()
+
+```
