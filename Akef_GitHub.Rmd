@@ -11,14 +11,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Brief Introduction to Git and GitHub
 
-## clean up!
+### clean up!
 ```{r clear-workspace}
 
 rm(list=ls())
 
 ```
 
-# get all the packages in...
+### get all the packages in...
 
 ```{r function-check-for-packages, include=FALSE}
 
@@ -48,12 +48,19 @@ required_packages = c("tidyverse",
 load_or_install_packages(required_packages)
 ```
 
+*******
+
+The following sections demonstrate how you can use Git and GitHub with RStudio. This will enable you to track changes across an R Project (which will function as a repository).
+*Source*: https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r/ 
+
+*******
+
 ## Making sure Git works on your computer
 
 We first need to install Git if needed, Macs come with Git installed by default. You might need to install Command Line Tools to be able to use Git commands. 
 
 
-## Configuring and Initializing Git
+## Configuring and Initializing Git for R Studio
 
 Next, we can configure git, but first editing the .gitconfig file, then initializing a Git repository to an RStudio project. You can do this by either:
 
@@ -61,6 +68,8 @@ Next, we can configure git, but first editing the .gitconfig file, then initiali
   * running the use_git() function below
 
 ```{r configuring git}
+
+# this doesn't typically need to be in any saved code or RMarkdown files, you just need to run it once
 
 edit_git_config()
 
@@ -77,10 +86,19 @@ Git will not automatically track changes, so you have to tell it when you made c
 **Any time you make additional changes you want to keep a record of:**
 
 * To do this, you must have made any changes since your last commit. Otherwise, you won't see the files that you made changes to listed in the Git tab.
-* Go to the Git tab and click on "Commit"
+* Make sure you save the file you made changes to. Go to the Git tab and click on "Commit"
 * This will open up a window where you can select the file you want to commit, and write a commit message. 
 * Once that's complete, you'll be able to view the changes in the history. 
 
-Now you can..
+*******
 
+## Connecting Rstudio Projects with GitHub Repositories
+
+1. The first thing you need to do is sign up for a GitHub account (free) if you don't already have one.
+2. Create a Personal Access Token (PAT) on GitHub, you'll need this along with your username.
+
+```{r create PAT}
+
+
+```
 
