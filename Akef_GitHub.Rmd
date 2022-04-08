@@ -171,3 +171,5 @@ Let's quickly test how *pull* works:
 
 1. Go to the GitHub repo, open the .Rmd file, edit it by adding any text, then commit the changes.
 2. When you come back to RStudio, in the Git tab, click on down arrow -- the new text will show up on the file! 
+
+Sending vibes to RStudio..... it's really windy outside actually. 
