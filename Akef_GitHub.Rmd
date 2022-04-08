@@ -167,9 +167,16 @@ Now that we've connect our RStudio project with a GitHub repo, we can *push* and
 * push = sending changes from RStudio to GitHub
 * pull = just the opposite, RStudio pulls most recent code from GitHub --- this is super important in collaborative work
 
+*Exercise*
 Let's quickly test how *pull* works:
 
 1. Go to the GitHub repo, open the .Rmd file, edit it by adding any text, then commit the changes.
 2. When you come back to RStudio, in the Git tab, click on down arrow -- the new text will show up on the file! 
 
-Sending vibes to RStudio..... it's really windy outside actually. 
+Now let's *push* some changes from RStudio to GitHub:
+
+1. Write anything below, save the file, and commit the change.
+2. Click on the up arrow, then go to the GitHub repo and check if you can see the new commit there.
+
+>>>> write text here
+
