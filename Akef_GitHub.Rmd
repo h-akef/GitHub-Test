@@ -38,15 +38,14 @@ load_or_install_packages <- function(pkg){
 
 ```{r load-packages, message=FALSE, results="hide"}
 # specify which packages we'll need
-required_packages = c("tidyverse",
-                      "stringr",
-                      "dplyr",
-                      "usethis",
-                      "gitcreds"
+required_packages = c("usethis",
+                      "gitcreds",
+                      "devtools"
                       )
 
 # install them (if necessary) and load them
 load_or_install_packages(required_packages)
+devtools::install_github("hadley/emo")
 ```
 
 *******
@@ -68,7 +67,7 @@ Next, we can configure git, but first editing the .gitconfig file, then initiali
   * checking the Git box when creating a project
   * running the use_git() function below
 
-```{r configuring git}
+```{r configuring git, eval = FALSE}
 
 # this doesn't typically need to be in any saved code or RMarkdown files, you just need to run it once
 
@@ -84,12 +83,20 @@ You can now see that there's a Git Tab open near the Environment and History tab
 
 Git will not automatically track changes, so you have to tell it when you made changes so it can keep a record of them. This is what we call making a commit. Always include a meaningful commit message so it makes sense when you view it in the history. 
 
-**Any time you make additional changes you want to keep a record of:**
-
 * To do this, you must have made any changes since your last commit. Otherwise, you won't see the files that you made changes to listed in the Git tab.
 * Make sure you save the file you made changes to. Go to the Git tab and click on "Commit"
 * This will open up a window where you can select the file you want to commit, and write a commit message. 
 * Once that's complete, you'll be able to view the changes in the history. 
+
+*Let's give this a shot!*
+
+Exercise: type in anything in the space below, perhaps how you're feeling right now, or what plans you have for this weekend 
+
+
+
+
+
+Once you're done writing, make sure you save the file. You'll see it show up in the Git tab, then you can click on Commit and see what happens!
 
 *******
 
@@ -99,7 +106,7 @@ Git will not automatically track changes, so you have to tell it when you made c
 2. Create a Personal Access Token (PAT) on GitHub, you'll need this along with your username.
 3. Store your PAT and connect to GitHub
 
-```{r create PAT & connect to GitHub}
+```{r create PAT & connect to GitHub, eval = FALSE}
 
 # you can also just do this in the console since it only needs to be done once
 
@@ -118,12 +125,40 @@ gitcreds_set()
 
 ```
 
-Now, that we've connected to GitHub, we'll connect our project to a GitHub repo -- note that each RStudio Project lives in a single GitHub repo. We can get this started here in RStudio or on GitHub. Here's how to do it here -- it's also just one line of code that navigates to GitHub to where your new repo is.
+Now, that we've connected to GitHub, we'll connect our project to a GitHub repo -- note that each RStudio Project lives in a single GitHub repo. We can get this started here in RStudio or on GitHub.
+
+### On GitHub: useful if you're just starting a new project on RStudio
+
+This is pretty straightforward, you first create the repository there. Then, when you create a new RStudio project, select the version control option, and enter the repo URL. 
+
+### On RStudio: useful if you have an existing projeect on RStudio
+
+Here's how to do it here -- it's also just one line of code that navigates to GitHub to where your new repo is.
 
 **Before running this, make sure you've committed all changes so they're copied into the repo**
 
-```{r create GitHub repo}
+```{r create GitHub repo, eval = FALSE}
 
 use_github()
 
+# this will take a few seconds, then will navigate to your new repo on GitHub! It will show up on your page and will take the name of your RStudio Project
+
+
 ```
+```{r emoji!}
+emo::ji("grinning")
+```
+
+*Practice*: in your newly created repo on GitHub, open your .Rmd file and click on "History" on the top right... you'll be able to see the same history of commits you made on RStudio, with the same details.
+
+*******
+
+Now that we've connect our RStudio project with a GitHub repo, we can *push* and *pull* our work between the two. 
+
+* push = sending changes from RStudio to GitHub
+* pull = just the opposite, RStudio pulls most recent code from GitHub --- this is super important in collaborative work
+
+Let's quickly test how *pull* works:
+
+1. Go to the GitHub repo, open the .Rmd file, edit it by adding any text, then commit the changes.
+2. When you come back to RStudio, in the Git tab, click on down arrow -- the new text will show up on the file!
